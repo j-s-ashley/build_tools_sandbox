@@ -6,3 +6,7 @@ The following files in this repository were created following instructions provi
 - example.c
 - example.i
 - pyproject.toml
+
+See [LICENSE](https://j-s-ashley/build_tools_sandbox/tree/main/LICENSE) for more information.
+
+The .gitignore for this repository is a replica of [Python.gitignore (github/gitignore)](https://github.com/github/gitignore/blob/main/Python.gitignore).
