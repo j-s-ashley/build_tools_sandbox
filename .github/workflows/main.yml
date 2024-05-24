@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         
-      - uses: pypa/build@v1.2
+      - uses: pypa/build@v1.2.1
         name: Build SDist
 
       - uses: actions/upload-artifact@v4
@@ -32,7 +32,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
        
-      - uses: pypa/build@v1.2
+      - uses: pypa/build@v1.2.1
         name: Build Wheel
 
       - name: Upload Wheels
