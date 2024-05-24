@@ -1,7 +1,6 @@
 [build-system]
 requires = ["scikit-build-core", "swig"]
 build-backend = "scikit_build_core.build"
-CIBW_TEST_SKIP = "*universal12:arm64"
 
 [project]
 name = "example"
