@@ -1,0 +1,41 @@
+mame: CI
+on: 
+  pull_request:
+    push:
+      branches:
+        - main
+        - add_GHA_based_CI
+
+jobs:
+  make_sdist:
+    name: Make SDist
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        
+      - name: Build SDist
+        run: pipx run build --sdist
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cibw-sdist
+          path: dist/*.tar.gz
+
+  build_wheels:
+    name: Wheel on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+
+    steps:
+      - uses: actions/checkout@v4
+       
+      - uses: pypa/cibuildwheel@v2.17
+
+      - name: Upload Wheels
+        uses: actions/upload-artifact@v4
+        with:
+          name: cibw-wheels-${{ matrix.os }}
+          path: wheelhouse/*.whl
