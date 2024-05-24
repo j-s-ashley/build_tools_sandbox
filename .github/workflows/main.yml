@@ -15,7 +15,6 @@ jobs:
         
       - uses: pypa/build@v1.2
         name: Build SDist
-        run: python -m build . -s
 
       - uses: actions/upload-artifact@v4
         with:
@@ -35,7 +34,6 @@ jobs:
        
       - uses: pypa/build@v1.2
         name: Build Wheel
-        run: python -m build . -w
 
       - name: Upload Wheels
         uses: actions/upload-artifact@v4
