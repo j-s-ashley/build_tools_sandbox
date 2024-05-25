@@ -33,14 +33,12 @@ jobs:
         os: [ubuntu-latest, windows-latest, macos-latest]
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-          submodules: true
 
-      - uses: pypa/cibuildwheel@v2.17
+      - name: Build wheels
+        uses: pypa/cibuildwheel@v2.18.1
 
       - name: Upload Wheels
         uses: actions/upload-artifact@v4
         with:
-          name: example-wheel-${{ matrix.os }}
+          name: cibw-wheel-${{ matrix.os }}
           path: wheelhouse/*.whl
