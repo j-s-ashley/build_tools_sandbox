@@ -2,9 +2,9 @@ from example import square
 
 '''
 Just going to leave a reminder here:
-    If you use the same name for your 
+    If you use the same name for your
     python script as a python library
-    (especially one that you call IN 
+    (especially one that you call IN
     that script), you're gonna have a
     bad time.
 '''
