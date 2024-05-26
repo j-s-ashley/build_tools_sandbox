@@ -40,9 +40,6 @@ jobs:
           python-version: "3.11"
           allow-prereleases: true
 
-      - name: Get SWIG
-        run: python3 -m pip install scikit-build-core swig
-
       - name: Build wheels
         uses: pypa/cibuildwheel@v2.18.1
 
