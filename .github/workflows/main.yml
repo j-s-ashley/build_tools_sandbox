@@ -1,5 +1,5 @@
 name: CI
-on: 
+on:
   pull_request:
   push:
     branches:
@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      
+
       - name: Build SDist
         run: pipx run build --sdist
 
@@ -33,6 +33,18 @@ jobs:
         os: [ubuntu-latest, windows-latest, macos-latest]
     steps:
       - uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          allow-prereleases: true
+
+      - name: Get SWIG
+        run: python3 -m pip install swig
+
+      - name: Import scikit-build-core
+        uses: scikit-build/scikit-build-core@v0.9.4
 
       - name: Build wheels
         uses: pypa/cibuildwheel@v2.18.1
