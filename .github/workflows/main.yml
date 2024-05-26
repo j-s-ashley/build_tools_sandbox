@@ -41,10 +41,7 @@ jobs:
           allow-prereleases: true
 
       - name: Get SWIG
-        run: python3 -m pip install swig
-
-      - name: Import scikit-build-core
-        uses: scikit-build/scikit-build-core@v0.9.4
+        run: python3 -m pip install scikit-build-core swig
 
       - name: Build wheels
         uses: pypa/cibuildwheel@v2.18.1
