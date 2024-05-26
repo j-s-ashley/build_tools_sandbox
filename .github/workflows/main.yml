@@ -25,7 +25,7 @@ jobs:
           path: dist/*.tar.gz
 
   build_wheels:
-    name: Wheel on ${{ matrix.os }}
+    name: Build wheel on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
