@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main
-      - add_GHA_based_CI
+      - cibuildwheel_based_CI
         # TODO Remove line above and uncomment line below
         #  workflow_dispatch:
 
