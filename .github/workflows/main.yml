@@ -9,20 +9,21 @@ on:
         #  workflow_dispatch:
 
 jobs:
-  make_sdist:
-    name: Make SDist
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
+  # TODO Uncomment when build_wheels starts working
+  #make_sdist:
+    #name: Make SDist
+    #runs-on: ubuntu-latest
+    #steps:
+      #- uses: actions/checkout@v4
 
-      - name: Build SDist
-        run: pipx run build --sdist
+      #- name: Build SDist
+        #run: pipx run build --sdist
 
-      - name: Upload SDist
-        uses: actions/upload-artifact@v4
-        with:
-          name: example
-          path: dist/*.tar.gz
+      #- name: Upload SDist
+        #uses: actions/upload-artifact@v4
+        #with:
+          #name: example
+          #path: dist/*.tar.gz
 
   build_wheels:
     name: Build wheel on ${{ matrix.os }}
