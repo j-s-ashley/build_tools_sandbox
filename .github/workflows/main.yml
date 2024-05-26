@@ -37,8 +37,6 @@ jobs:
 
       - name: Build wheels
         uses: pypa/cibuildwheel@v2.18.1
-        with:
-          config-file: "pyproject.toml"
 
       - name: Upload wheels
         uses: actions/upload-artifact@v4
