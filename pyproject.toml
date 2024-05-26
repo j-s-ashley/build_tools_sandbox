@@ -1,10 +1,14 @@
 [build-system]
-requires = ["scikit-build-core", "swig",]
+requires = ["scikit-build-core", "swig"]
 build-backend = "scikit_build_core.build"
 
 [project]
 name = "example"
 version = "0.0.1"
+readme = "README.md"
+license.file = "LICENSE"
+requires-python = ">=3.8"
+dynamic = ["version"]
 
 [tool.scikit-build]
 minimum-version = "0.8"
