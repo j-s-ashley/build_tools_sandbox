@@ -1,5 +1,5 @@
 [tool.cibuildwheel]
-before-build = ["pip install scikit-build-core swig"]
+before-build = ["python -m pip install scikit-build-core swig"]
 
 [build-system]
 requires = ["scikit-build-core", "swig"]
