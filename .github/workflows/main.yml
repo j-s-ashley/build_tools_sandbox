@@ -35,14 +35,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Setup Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.11"
-          allow-prereleases: true
-
       - name: Build wheels
         uses: pypa/cibuildwheel@v2.18.1
+        with:
+          config-file: "pyproject.toml"
 
       - name: Upload wheels
         uses: actions/upload-artifact@v4
