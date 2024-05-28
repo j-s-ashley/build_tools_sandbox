@@ -4,9 +4,7 @@ on:
   push:
     branches:
       - main
-      - cibuildwheel_based_CI
-        # TODO Remove line above and uncomment line below
-        #  workflow_dispatch:
+  workflow_dispatch:
 
 jobs:
   make_sdist:
